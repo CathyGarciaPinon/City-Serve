@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Outreach Request: </div>
+    <div><%= outreaches.request %></div>
+    <div>Description: </div>
+    <div><%= outreaches.description %></div>
+    <div>Location: </div>
+    <div><%= outreaches.location%></div>
+    
+  </section>
+  
+  
+  <br><br><h2>Comments</h2>
+  <% if (user) { %>
+  <form id="add-comment-form" method="POST"
+    action="/outreaches/<%= outreach._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea> 
+    <input type="submit" value="Add Comment">
+  </form>
+  <% } %>
+  
+  
+ 
+<%- include('../partials/footer') %>

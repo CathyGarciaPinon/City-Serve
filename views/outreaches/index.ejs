@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<h2>Outreach Request</h2>
+<table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% outreaches.forEach(function(m) { %>
+        <tr>
+          <td><%= o.title %></td>
+          <td><%= o.description %></td>
+          <td><%= o.location %></td>
+          <td><a href="/outreaches/<%= o._id %>">DETAILS</a></td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+
+<%- include('../partials/footer') %>
