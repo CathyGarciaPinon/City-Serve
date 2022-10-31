@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
+
 
 const outreachSchema = new Schema ({
     title: {
@@ -8,7 +8,7 @@ const outreachSchema = new Schema ({
         required: true
     },
     description: {
-        type: Text
+        type: String,
     },
     location: {
         type: String,
