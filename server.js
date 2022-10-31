@@ -13,9 +13,8 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-// var outreachesRouter = require('./routes/outreaches');
-// var commentsRouter = require('./routes/comments');
-// var volunteerssRouter = require('./routes/volunteers');
+var outreachesRouter = require('./routes/outreaches');
+
 
 var app = express();
 
@@ -44,9 +43,8 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRouter);
-// app.use('/outreaches', outreachesRouter);
-// app.use('/', commentsRouter);
-// app.use('/', volunteersRouter);
+app.use('/outreaches', outreachesRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

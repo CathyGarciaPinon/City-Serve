@@ -10,11 +10,11 @@
 <body>
   <nav>
     <!-- <img src="/images/camera.svg"> -->
-    <a href="/" <%- title === 'CITY SERVE' ? 'class="active"' : '' %>>HOME/a>
+    <a href="/" <%- title === 'CITY SERVE' ? 'class="active"' : '' %>>HOME</a> |
     <% if (user) { %>
-      <a href="/outreaches" <%- title === 'Outreach Request' ? 'class="active"' : '' %>>OUTREACH REQUESTS</a>
-      <a href="/volunteers/new" <%- title === 'Volunteer Sign Up' ? 'class="active"' : '' %>>VOLUNTEER SIGN UP</a>
-      <a href="/outreaches/new" <%- title === 'Add New Request' ? 'class="active"' : '' %>>ADD NEW REQUEST</a>
+      <a href="/outreaches" <%- title === 'Outreach Request' ? 'class="active"' : '' %>>OUTREACH REQUESTS</a> |
+      <a href="/volunteers/new" <%- title === 'Volunteer Sign Up' ? 'class="active"' : '' %>>VOLUNTEER SIGN UP</a> |
+      <a href="/outreaches/new" <%- title === 'Add New Request' ? 'class="active"' : '' %>>ADD NEW REQUEST</a> |
       <a href="/logout">LOG OUT</a>
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN <img src="https://i.imgur.com/FHjYyi0.png"></a>

@@ -1,21 +1,24 @@
 <%- include('../partials/header') %>
 
 <h2>Outreach Request</h2>
-<table>
+<table id="list">
     <thead>
       <tr>
         <th>Title</th>
         <th>Description</th>
+        <th>Location</th>
+        <th>When</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
-      <% outreaches.forEach(function(m) { %>
+      <% outreaches.forEach(function(o) { %>
         <tr>
           <td><%= o.title %></td>
           <td><%= o.description %></td>
           <td><%= o.location %></td>
-          <td><a href="/outreaches/<%= o._id %>">DETAILS</a></td>
+          <td><%= o.when %></td>
+          <td><button><a href="/outreaches/<%= o._id %>">DETAILS</a></button></td>
         </tr>
         <% }); %>
     </tbody>
