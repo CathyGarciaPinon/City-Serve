@@ -1,17 +1,79 @@
-
+* {
+  box-sizing: border-box;
+  font-family: 'Lora', serif;
+}
 
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url('/images/Wallpaper.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 5vmin;
+  text-align: center;
+  font-size: 3vmin;
 }
 
-a {
-  color: #00B7FF;
+body > nav {
+  grid-area: nav;
+  background-color: rgb(58, 107, 110);
+  /* opacity: 0.5; */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 20px 0 30px;
 }
 
+nav > a {
+  color: rgb(227, 206, 198);
+}
+
+nav > a:hover:not(.active) {
+  color: white;
+  background-color: rgb(84, 47, 66);
+}
+
+h1 {
+    text-align: center;
+    font-size: 12vmin;
+    color: rgb(58, 107, 110);
+    /* opacity: 0.5 */
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: rgb(84, 47, 66);
+}
+
+h2 {
+  text-align: center;
+  font-size: 5vmin;
+  color: rgb(185, 147, 88);
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: rgb(84, 47, 66);
+}
+
+p {
+  background-color:rgb(185, 147, 88);
+}
+
+#new-form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+  color: rgb(185, 147, 88);
+  background-color: rgb(84, 47, 66);
+}
+
+#new-form input[type="submit"] {
+  grid-column: span 2;
+  width: 10rem;
+  margin-left: auto;
+}
+
+#list {
+  border-radius: 2px;
+  background-color: rgb(123, 153, 146);
+  padding: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(84, 47, 66);
+}
 
 
 .login {

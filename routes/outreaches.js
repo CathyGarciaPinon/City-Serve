@@ -10,5 +10,7 @@ router.get('/', outreachesCtrl.index);
 router.get('/new', ensureLoggedIn, outreachesCtrl.new);
 
 router.get('/:id', outreachesCtrl.show);
+
+router.post('/', ensureLoggedIn, outreachesCtrl.create);
   
   module.exports = router;

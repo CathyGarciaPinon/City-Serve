@@ -4,29 +4,21 @@
 <h2>Please provide the following to add a new request:</h2>
 
 <form id="new-form" action="/outreaches" method="POST">
-  <label>Title:
-    <input type="text" name="title">
-  </label><br>  
-
-  <label>Description:
-  <textarea type="text" name="description">
-  </label><br>
-
-  <label>Location:
-    <select name="location">
-      <option value="Antioch">Antioch,CA</option>
-      <option value="Berkeley">Berkeley,CA</option>
-      <option value="Concord">Concord,CA</option>
-      <option value="Oakland">Oakland,CA</option>
-      <option value="Richmond">Richmond,CA</option>
-    </select>
-  </label><br>
-  
-  <label>When:
-    <input type="date" name="when">
-  </label><br>
-
-  <button type="submit">Add New Request</button>
-</form><br>
+  <label>Title:</label>
+  <input type="text" name="title">
+  <label>Description:</label>
+  <input type="text" name="description">
+  <label>Location:</label>
+  <select name="location">
+    <option value="Antioch">Antioch,CA</option>
+    <option value="Berkeley">Berkeley,CA</option>
+    <option value="Concord">Concord,CA</option>
+    <option value="Oakland">Oakland,CA</option>
+    <option value="Richmond">Richmond,CA</option>
+  </select>
+  <label>When:</label>
+  <input type="date" name="when">
+  <input type="submit" value="Add Request">
+</form>
 
 <%- include('../partials/footer') %> 
