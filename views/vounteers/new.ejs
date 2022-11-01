@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<div>Please verify there are no duplicate Volunteers before adding:</div>
+<section id="badge-container">
+  <% volunteers.forEach(function(v) { %>
+    <article class="badge"><%= v.name %></article>
+  <% }) %>
+</section>
+
+<form id="add-volunteer-form" action="/volunteers" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>City:</label>
+  <select name="location">
+    <option value="Antioch">Antioch,CA</option>
+    <option value="Berkeley">Berkeley,CA</option>
+    <option value="Concord">Concord,CA</option>
+    <option value="Oakland">Oakland,CA</option>
+    <option value="Richmond">Richmond,CA</option>
+  </select>
+  <input type="submit" value="Add Volunteer">
+</form>
+
+
+<%- include('../partials/footer') %>

@@ -27,6 +27,8 @@ function newOutreach(req, res) {
 function create(req, res) {
     const outreach = new Outreach(req.body);
     outreach.save(function(err) {
-        if (err) ReadableStreamDefaultController
+        if (err) return res.redirect('/outreaches/new');
+        console.log(movie);
+        res.redirect(`/outreaches/{outreaches._id}`);
     });
 }

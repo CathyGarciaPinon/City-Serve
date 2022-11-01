@@ -9,8 +9,25 @@
     <div><%= outreach.location %></div>
     <div>When: </div>
     <div><%= outreach.when %></div>
+
+    <div>Volunteers List:</div>
+    <ul>
+      <%- outreach.voluteers.map(v =>
+      `<li>${v.name} <small>${v.city()}</small></li>`
+      ).join('') %>
+    </ul>
 </section>
-  
+
+
+<form id="add-per-to-volunteers" action="/outreaches/<%= outreach._id %>/volunteers" method="POST">
+<select name="volunteerId">
+
+  <%- volunteers.map(v => 
+    `<option value="${v._id}">${v.name}</option>`
+  ).join('') %>
+</select>
+<button type="submit">Add to Volunteers List</button>
+</form>
   
  
   
