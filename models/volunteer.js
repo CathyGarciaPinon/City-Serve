@@ -8,7 +8,7 @@ const volunteerSchema = new Schema({
         required: true,
         unique: true
     },
-    City: {
+    city: {
         type: String,
         required: true
     }

@@ -20,6 +20,10 @@ const outreachSchema = new Schema ({
           return new Date().setFullYear(new Date().getFullYear() + 1)
         },
     },  
+    volunteers: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Volunteer'
+    }],
     timestamps: {type: Boolean, default: true}
 });
 

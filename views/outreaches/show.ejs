@@ -12,8 +12,8 @@
 
     <div>Volunteers List:</div>
     <ul>
-      <%- outreach.voluteers.map(v =>
-      `<li>${v.name} <small>${v.city()}</small></li>`
+      <%- volunteers.map(v =>
+      `<li>${v.name} <small>${v.city}</small></li>`
       ).join('') %>
     </ul>
 </section>
@@ -21,7 +21,6 @@
 
 <form id="add-per-to-volunteers" action="/outreaches/<%= outreach._id %>/volunteers" method="POST">
 <select name="volunteerId">
-
   <%- volunteers.map(v => 
     `<option value="${v._id}">${v.name}</option>`
   ).join('') %>

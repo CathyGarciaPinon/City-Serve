@@ -19,7 +19,8 @@ function addToRequest(req, res) {
 
 function create(req, res) {
     Volunteer.create(req.body, function (err, volunteer) {
-        res.redirect('/volunteer/new');
+        console.log(err)
+        res.redirect('/volunteers/new');
     });
 }
 
