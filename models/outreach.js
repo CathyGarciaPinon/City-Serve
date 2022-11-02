@@ -38,12 +38,24 @@ const outreachSchema = new Schema ({
         default: function() {
           return new Date().setFullYear(new Date().getFullYear() + 1)
         },
-    },  
+    }, 
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    userName: {
+      type: String
+    },
+    userAvatar: {
+      type: String
+    },
     volunteers: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Volunteer'
-    }],
-    timestamps: {type: Boolean, default: true}
+     type: Schema.Types.ObjectId,
+    ref: 'Volunteer'
+  }],
+  comments: [commentSchema]
+  }, {
+    timestamps: true
 });
 
 

@@ -4,16 +4,27 @@ const { estimatedDocumentCount } = require('../models/volunteer');
 module.exports = {
     create,
     delete: deleteComment,
-    edit
+    edit,
+    update
 };
 
+function update(req, res) {
+  Outreach.findOne({'comments._id': req.params.id}, function(err, outreach) {
+    const commentSubdoc = outreach.comments.id(req.params.id);
+    if (!commentSubdoc.user.equals(req.user._id)) return res.redirect(`/outreaches/${outreach._id}`);
+    commentSubdoc.comment = req.body.comment;
+    outreach.save(function(err) {
+      res.redirect(`/outreaches/${outreach._id}`);
+    });
+  });
+}
+
+
 function edit(req, res) {
-    Outreach.findOne({
-        'comments.id': req.params.id, 
-        'comments.user': req.user._id
-    }, function(err, book) {
-      if (err || !outreach) return res.redirect('/outreaches');
-      res.render('/outreaches', {outreach});
+    Outreach.findOne({'comments._id': req.params.id}, function(err, outreach) {
+      const comment = outreach.comments.id(req.params.id);
+      console.log(comment);
+      res.render('outreaches/edit', {comment, title:"edit comment"});
     });
   }
 

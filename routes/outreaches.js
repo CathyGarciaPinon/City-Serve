@@ -12,5 +12,8 @@ router.get('/new', ensureLoggedIn, outreachesCtrl.new);
 router.get('/:id', outreachesCtrl.show);
 
 router.post('/', ensureLoggedIn, outreachesCtrl.create);
+
+router.delete('/:id', ensureLoggedIn, outreachesCtrl.delete);
   
-  module.exports = router;
+
+module.exports = router;

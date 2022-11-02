@@ -18,7 +18,14 @@
           <td><%= o.description %></td>
           <td><%= o.location %></td>
           <td><%= o.when %></td>
-          <td><button><a href="/outreaches/<%= o._id %>">DETAILS</a></button></td>
+          <td><button><a href="/outreaches/<%= o._id %>">INFO</a></button></td>
+          <td>
+            <% if (user?._id.equals(o.userId)) { %>
+              <form action="/outreaches/<%= o._id %>?_method=DELETE" method="POST">
+                <button type="submit">DELETE</button>
+              </form>
+            <% } %>
+          </td>
         </tr>
         <% }); %>
     </tbody>

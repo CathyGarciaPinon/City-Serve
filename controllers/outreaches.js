@@ -5,7 +5,8 @@ module.exports = {
     index,
     show,
     new: newOutreach,
-    create 
+    create,
+    delete: deleteOutreach
 }
 
 function index(req, res) {
@@ -36,10 +37,23 @@ function newOutreach(req, res) {
 }
 
 function create(req, res) {
+    req.body.userId = req.user._id
+    req.body.userName = req.user.name
+    req.body.userAvatar = req.user.avatar
     const outreach = new Outreach(req.body);
     outreach.save(function(err) {
         if (err) return res.redirect('/outreaches/new');
 
-        res.redirect(`/outreaches/{outreaches._id}`);
+        res.redirect(`/outreaches/${outreach._id}`);
     });
+}
+
+function deleteOutreach(req, res) {
+  Outreach.findOneAndDelete(
+    // Ensue that the book was created by the logged in user
+    {_id: req.params.id, userId: req.user._id}, function(err) {
+      // Deleted book, so must redirect to index
+      res.redirect('/outreaches');
+    }
+  );
 }

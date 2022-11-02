@@ -71,7 +71,7 @@ p {
 }
 
 #list {
-  border-radius: 2px;
+  border-radius: 4px;
   color: rgb(185, 147, 88);
   background-color: rgb(84, 47, 66);
   padding: 10px;
@@ -99,7 +99,7 @@ p {
 
 }
 
-#add-volunteer-form {
+#comments-section {
   border-radius: 2px;
   background-color: rgb(123, 153, 146);
   color: rgb(84, 47, 66);

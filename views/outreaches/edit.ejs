@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+
+
+<form id="add-comment-form" method="POST"
+action="/outreaches/<%= comment._id %>/comments?_method=PUT">
+<label>Comments:</label>
+<textarea name="comment" ><%= comment.comment %></textarea>
+
+<input type="submit" value="Add Comment">
+</form>
+
+
+<%- include('../partials/footer') %>

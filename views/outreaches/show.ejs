@@ -16,33 +16,64 @@
       `<li>${v.name} <small>${v.city}</small></li>`
       ).join('') %>
     </ul>
+
+
+  <form id="add-per-to-volunteers" action="/outreaches/<%= outreach._id %>/volunteers" method="POST">
+    <select name="volunteerId">
+      <%- volunteers.map(v => 
+      `<option value="${v._id}">${v.name}</option>`
+      ).join('') %>
+    </select>
+    <button type="submit">Add to Volunteers List</button>
+  </form>
 </section>
-
-
-<form id="add-per-to-volunteers" action="/outreaches/<%= outreach._id %>/volunteers" method="POST">
-<select name="volunteerId">
-  <%- volunteers.map(v => 
-    `<option value="${v._id}">${v.name}</option>`
-  ).join('') %>
-</select>
-<button type="submit">Add to Volunteers List</button>
-</form>
-  
  
 
+<section id="comments-section">
 <br><br>
 <% if (user) { %>
   <form id="add-comment-form" method="POST"
     action="/outreaches/<%= outreach._id %>/comments">
     <label>Comments:</label>
-    <textarea name="content"></textarea>
+    <textarea name="comment"></textarea>
     
     <input type="submit" value="Add Comment">
   </form>
 <% } %>
 
 
+<% if (outreach.comments.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Posted Comments:</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% outreach.comments.forEach(function(c) { %>
+        <tr>
+          <td><%= c.comment %></td>
+          <td>
+            <% if (user?._id.equals(c.user)) { %>
+              <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete</button>
+              </form>
+            <% } %>
+          </td>
+          <td>
+            <% if (user?._id.equals(c.user)) { %>
+              <button><a href="/comments/<%= c._id %>/edit">Edit</a></button>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
 
+  </table>
+<% } else { %>
+  <h5>No Comments Yet</h5>
+<% } %>
+</section>
 
 
   
