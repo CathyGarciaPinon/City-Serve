@@ -29,7 +29,22 @@
 </form>
   
  
-  
+
+<br><br>
+<% if (user) { %>
+  <form id="add-comment-form" method="POST"
+    action="/outreaches/<%= outreach._id %>/comments">
+    <label>Comments:</label>
+    <textarea name="content"></textarea>
+    
+    <input type="submit" value="Add Comment">
+  </form>
+<% } %>
+
+
+
+
+
   
  
 <%- include('../partials/footer') %>

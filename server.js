@@ -14,6 +14,7 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var outreachesRouter = require('./routes/outreaches');
+var commentRouter = require('./routes/comments');
 var volunteersRouter = require('./routes/volunteers');
 
 
@@ -46,6 +47,7 @@ app.use(function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/outreaches', outreachesRouter);
 app.use('/', volunteersRouter);
+// app.use('/', commentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
