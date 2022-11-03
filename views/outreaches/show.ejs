@@ -12,17 +12,17 @@
 
     <div>Volunteers List:</div>
     <ul>
-      <%- volunteers.map(v =>
-      `<li>${v.name} <small>${v.city}</small></li>`
+      <%- outreach.volunteers.map(v =>
+        `<li>${v.name} <small>${v.city}</small></li>`
       ).join('') %>
     </ul>
 
 
   <form id="add-per-to-volunteers" action="/outreaches/<%= outreach._id %>/volunteers" method="POST">
     <select name="volunteerId">
-      <%- volunteers.map(v => 
-      `<option value="${v._id}">${v.name}</option>`
-      ).join('') %>
+      <% volunteers.map(function (v){  %>
+      <option value="<%= v._id %>"><%= v.name %></option>
+      <% }) %>
     </select>
     <button type="submit">Add to Volunteers List</button>
   </form>

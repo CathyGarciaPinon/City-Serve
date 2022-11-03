@@ -40,6 +40,7 @@ function create(req, res) {
     req.body.userId = req.user._id
     req.body.userName = req.user.name
     req.body.userAvatar = req.user.avatar
+    console.log(req.body)
     const outreach = new Outreach(req.body);
     outreach.save(function(err) {
         if (err) return res.redirect('/outreaches/new');

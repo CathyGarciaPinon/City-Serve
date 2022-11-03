@@ -1,6 +1,6 @@
 const Volunteer = require('../models/volunteer');
 const Outreach = require('../models/outreach');
-const outreach = require('../models/outreach');
+
 
 module.exports = {
     new: newVolunteer,
@@ -9,9 +9,9 @@ module.exports = {
 };
 
 function addToRequest(req, res) {
-    Outreach.findById(req.params.id, function(err, movie) {
-        outreach.cast.push(req.body.performerId);
-        movie.save(function(err) {
+    Outreach.findById(req.params.id).populate('volunteers').exec( function(err, outreach) {
+        outreach.volunteers.push(req.body.volunteerId);
+        outreach.save(function(err) {
             res.redirect(`/outreaches/${outreach._id}`);
         });
     });

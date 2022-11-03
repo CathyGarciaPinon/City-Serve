@@ -5,7 +5,7 @@
   <% volunteers.forEach(function(v) { %>
     <article class="badge"><%= v.name %></article>
   <% }) %>
-</section>
+
 
 <form id="add-volunteer-form" action="/volunteers" method="POST">
   <label>Name:</label>
@@ -20,6 +20,6 @@
   </select>
   <input type="submit" value="Add Volunteer">
 </form>
-
+</section>
 
 <%- include('../partials/footer') %>
