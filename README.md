@@ -30,9 +30,11 @@ Non-profits can add a new Outreach request by clicking on the Add Request and fi
 ![HEROKU](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
 
-## LINK
+## LINKS
 
 https://city-serve-bayarea.herokuapp.com/
+
+https://trello.com/b/mfrnOy6V/city-serve-project-2
 
 
 ## Next Steps
