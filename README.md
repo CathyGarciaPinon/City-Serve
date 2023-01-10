@@ -1,6 +1,6 @@
 # City-Serve
 
-City Serve is a place to get memebers of our community connected with non-profit organazation who have a need or pending outreach requests for volunteers.
+City Serve is a place to get memebers of our community connected with non-profit organizations who have a need or pending outreach requests for volunteers.
 ![This is an image](public/images/ReadMe/Welcome-LogIn-Page.png)
 
 
@@ -41,4 +41,4 @@ https://trello.com/b/mfrnOy6V/city-serve-project-2
 
 - Implement sorting functionality for users to sort Outreach request by City or Organazation.
 - Upload images to Outreach request
-- Ability to use avatars
+- Ability to use avatars 
